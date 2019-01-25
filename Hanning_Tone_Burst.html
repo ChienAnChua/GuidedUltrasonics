@@ -13156,106 +13156,6 @@ div#notebook {
 
   
 
-  <div class="
-      cell border-box-sizing code_cell rendered">
-    <div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#https://ipywidgets.readthedocs.io/en/stable/examples/Widget%20Styling.html</span>
-<span class="c1"># wi = widgets.IntSlider(</span>
-<span class="c1">#     value=5,</span>
-<span class="c1">#     min=1,</span>
-<span class="c1">#     max=50,</span>
-<span class="c1">#     step=1,</span>
-<span class="c1">#     disabled=False,</span>
-<span class="c1">#     continuous_update=False,</span>
-<span class="c1">#     orientation=&#39;horizontal&#39;,</span>
-<span class="c1">#     readout=True,</span>
-<span class="c1">#     readout_format=&#39;d&#39;,</span>
-<span class="c1">#     description=&#39;Cycles&#39;,</span>
-<span class="c1">#     layout=Layout(width=&#39;50%&#39;, height=&#39;80px&#39;),</span>
-<span class="c1">#     style=style</span>
-<span class="c1"># )</span>
-
-<span class="c1"># wfreq = widgets.IntSlider(</span>
-<span class="c1">#     value=85,</span>
-<span class="c1">#     min=1,</span>
-<span class="c1">#     max=500,</span>
-<span class="c1">#     step=1,</span>
-<span class="c1">#     disabled=False,</span>
-<span class="c1">#     continuous_update=False,</span>
-<span class="c1">#     orientation=&#39;horizontal&#39;,</span>
-<span class="c1">#     readout=True,</span>
-<span class="c1">#     readout_format=&#39;d&#39;,</span>
-<span class="c1">#     description = &#39;Frequency [kHz]&#39; ,</span>
-<span class="c1">#     layout=Layout(width=&#39;50%&#39;, height=&#39;80px&#39;),</span>
-<span class="c1">#     style=style</span>
-<span class="c1"># )</span>
-
-
-<span class="c1"># def myfun( w , freqkHz = 85.0):</span>
-<span class="c1">#     #fig = plt.figure(num=1, figsize=[20, 5])</span>
-<span class="c1">#     #ax = fig.add_subplot(1, 2, 1)</span>
-<span class="c1">#     print(w)</span>
-<span class="c1">#     print(type(w))</span>
-<span class="c1">#     nCycles = w.astype(int) #np.floor(w)</span>
-<span class="c1">#     print(nCycles)</span>
-<span class="c1">#     # Hanning window</span>
-<span class="c1">#     sig1, tSig = HanningSignal(freqkHz*1000,nCycles)</span>
-<span class="c1">#     t = tSig</span>
-<span class="c1">#     y_signal=sig1</span>
-<span class="c1">#     return y_signal, t;</span>
-    
-<span class="c1">#     maxfreq = (freqkHz+(4*freqkHz/nCycles))/1</span>
-<span class="c1">#     minfreq = (freqkHz-(4*freqkHz/nCycles))/1</span>
-<span class="c1">#     if minfreq &lt;0:</span>
-<span class="c1">#         minfreq =0  </span>
-<span class="c1"># y_signal, t = myfun(w= 5,freqkHz = 85.0)</span>
-
-    
-    
-<span class="c1">#     ax.plot( t, y_signal , color=mycolor, label=&#39;Time Signal&#39;,linewidth =2)</span>
-<span class="c1">#     ax.legend(loc=1)</span>
-<span class="c1">#     plt.axis(&#39;tight&#39;)</span>
-<span class="c1">#     plt.xlabel(&quot;Time (s)&quot;)</span>
-<span class="c1">#     plt.title(&#39;Time domain&#39;)</span>
-    
-<span class="c1">#     # Compute the FFT</span>
-<span class="c1">#     f_s = 1/(t[1]-t[0])</span>
-<span class="c1">#     fft_x = np.fft.fft(y_signal)</span>
-<span class="c1">#     n = len(fft_x)</span>
-<span class="c1">#     freq = np.fft.fftfreq(n, 1/f_s)</span>
-
-<span class="c1">#     # Swap half spaces</span>
-<span class="c1">#     fft_x_shifted = np.fft.fftshift(fft_x)</span>
-<span class="c1">#     freq_shifted = np.fft.fftshift(freq)</span>
-
-<span class="c1">#     #Fold negative frequencies and scale</span>
-<span class="c1">#     half_n = int(np.ceil(n/2.0))</span>
-<span class="c1">#     fft_x_half = (2.0 / n) * fft_x[:half_n]</span>
-<span class="c1">#     freq_half = freq[:half_n]</span>
-
-<span class="c1">#     ax = fig.add_subplot(1, 2, 2)</span>
-<span class="c1">#     ax.plot(freq_half/1000, np.abs(fft_x_half), color=mycolor, label=&#39;Spectrum Amplitude &#39;,linewidth =5)</span>
-<span class="c1">#     ax.legend(loc=1)</span>
-<span class="c1">#     plt.title(&#39;Frequency domain&#39;)</span>
-<span class="c1">#     plt.xlabel(&quot;Frequency (kHz)&quot;)</span>
-<span class="c1">#     plt.axis(&#39;tight&#39;)</span>
-<span class="c1">#     plt.xlim(minfreq,maxfreq)</span>
-    
-<span class="c1">#     fig.canvas.draw()</span>
-<span class="c1"># interact(myfun,nCycles=(5, 10),freqkHz=(50, 100));</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-  </div>
-
-  
-
   <div class="nbinteract-left
       cell border-box-sizing code_cell rendered">
     <div class="input">
@@ -13264,10 +13164,25 @@ div#notebook {
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="k">import</span> <span class="o">*</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="c1">#import matplotlib.pyplot as plt</span>
 <span class="kn">import</span> <span class="nn">nbinteract</span> <span class="k">as</span> <span class="nn">nb</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="k">import</span> <span class="n">HTML</span>
 
-<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="c1">#https://www.reddit.com/r/IPython/comments/4e195c/best_practices_for_hiding_code_in_jupyter_notebook/</span>
+<span class="n">HTML</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;&lt;script&gt;</span>
+<span class="s1">code_show=true; </span>
+<span class="s1">function code_toggle() {</span>
+<span class="s1"> if (code_show){</span>
+<span class="s1"> $(&#39;div.input&#39;).hide();</span>
+<span class="s1"> } else {</span>
+<span class="s1"> $(&#39;div.input&#39;).show();</span>
+<span class="s1"> }</span>
+<span class="s1"> code_show = !code_show</span>
+<span class="s1">} </span>
+<span class="s1">$( document ).ready(code_toggle);</span>
+<span class="s1">&lt;/script&gt;</span>
+<span class="s1">The raw code for this IPython notebook is by default hidden for easier reading.</span>
+<span class="s1">To toggle on/off the raw code, click &lt;a href=&quot;javascript:code_toggle()&quot;&gt;here&lt;/a&gt;.&#39;&#39;&#39;</span><span class="p">)</span>
+
 
 
 
@@ -13328,45 +13243,6 @@ div#notebook {
     </button>
   </div>
 
-</div>
-
-</div>
-</div>
-
-  </div>
-
-  
-
-  <div class="
-      cell border-box-sizing code_cell rendered">
-    <div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">nCycles</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
-<span class="ansi-red-intense-fg ansi-bold">NameError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-intense-fg ansi-bold">&lt;ipython-input-25-cbb31f727345&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">----&gt; 1</span><span class="ansi-yellow-intense-fg ansi-bold"> </span>print<span class="ansi-yellow-intense-fg ansi-bold">(</span>nCycles<span class="ansi-yellow-intense-fg ansi-bold">)</span>
-
-<span class="ansi-red-intense-fg ansi-bold">NameError</span>: name &#39;nCycles&#39; is not defined</pre>
-</div>
 </div>
 
 </div>
